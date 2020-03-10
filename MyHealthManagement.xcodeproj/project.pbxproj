@@ -3,25 +3,59 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C9C894CF01227800469B55B /* Pods_MyHealthManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 253BCABACFDF670BF5B45FEF /* Pods_MyHealthManagement.framework */; };
+		AB5DEC8E24162E5E00845681 /* KeyboardHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5DEC8D24162E5E00845681 /* KeyboardHandle.swift */; };
+		AB5DEC912416347B00845681 /* BodyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5DEC902416347B00845681 /* BodyViewModel.swift */; };
+		AB5DEC942416393400845681 /* Double + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5DEC932416393400845681 /* Double + Extension.swift */; };
+		AB5DEC9624163CF800845681 /* UIColor + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5DEC9524163CF800845681 /* UIColor + Extension.swift */; };
+		AB5DEC98241640AD00845681 /* String + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5DEC97241640AD00845681 /* String + Extension.swift */; };
+		AB5DEC9A2417244C00845681 /* RLMManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5DEC992417244C00845681 /* RLMManager.swift */; };
+		AB5DEC9C24172E5900845681 /* UnmanagedCopy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5DEC9B24172E5900845681 /* UnmanagedCopy.swift */; };
+		AB5DEC9E24173B7000845681 /* Date + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5DEC9D24173B7000845681 /* Date + Extension.swift */; };
 		AB6847BC2415D7DA009092F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6847BB2415D7DA009092F4 /* AppDelegate.swift */; };
-		AB6847BE2415D7DA009092F4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6847BD2415D7DA009092F4 /* ViewController.swift */; };
-		AB6847C12415D7DA009092F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB6847BF2415D7DA009092F4 /* Main.storyboard */; };
 		AB6847C32415D7DD009092F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB6847C22415D7DD009092F4 /* Assets.xcassets */; };
 		AB6847C62415D7DD009092F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB6847C42415D7DD009092F4 /* LaunchScreen.storyboard */; };
+		AB6847CE2415D821009092F4 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6847CD2415D821009092F4 /* AppCoordinator.swift */; };
+		AB6847D02415DB72009092F4 /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6847CF2415DB72009092F4 /* DateViewController.swift */; };
+		AB6847D22415DB89009092F4 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6847D12415DB89009092F4 /* ChartViewController.swift */; };
+		AB81E1672415E6B200ABBEE9 /* Declarative.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB81E1662415E6B200ABBEE9 /* Declarative.swift */; };
+		AB81E16C2415E78C00ABBEE9 /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB81E16B2415E78C00ABBEE9 /* DatePickerView.swift */; };
+		AB81E17024160F7100ABBEE9 /* DatePickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB81E16F24160F7100ABBEE9 /* DatePickerTextField.swift */; };
+		AB81E173241621B700ABBEE9 /* InBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB81E172241621B700ABBEE9 /* InBody.swift */; };
+		AB81E176241625F700ABBEE9 /* Body.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB81E175241625F700ABBEE9 /* Body.swift */; };
+		AB81E1792416279E00ABBEE9 /* BodyDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB81E1782416279E00ABBEE9 /* BodyDataCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		253BCABACFDF670BF5B45FEF /* Pods_MyHealthManagement.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyHealthManagement.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F24AFA4D20BA34DEB82D69C /* Pods-MyHealthManagement.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyHealthManagement.debug.xcconfig"; path = "Target Support Files/Pods-MyHealthManagement/Pods-MyHealthManagement.debug.xcconfig"; sourceTree = "<group>"; };
+		AB5DEC8D24162E5E00845681 /* KeyboardHandle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHandle.swift; sourceTree = "<group>"; };
+		AB5DEC902416347B00845681 /* BodyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyViewModel.swift; sourceTree = "<group>"; };
+		AB5DEC932416393400845681 /* Double + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double + Extension.swift"; sourceTree = "<group>"; };
+		AB5DEC9524163CF800845681 /* UIColor + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extension.swift"; sourceTree = "<group>"; };
+		AB5DEC97241640AD00845681 /* String + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Extension.swift"; sourceTree = "<group>"; };
+		AB5DEC992417244C00845681 /* RLMManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RLMManager.swift; sourceTree = "<group>"; };
+		AB5DEC9B24172E5900845681 /* UnmanagedCopy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnmanagedCopy.swift; sourceTree = "<group>"; };
+		AB5DEC9D24173B7000845681 /* Date + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date + Extension.swift"; sourceTree = "<group>"; };
 		AB6847B82415D7DA009092F4 /* MyHealthManagement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyHealthManagement.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB6847BB2415D7DA009092F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AB6847BD2415D7DA009092F4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		AB6847C02415D7DA009092F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AB6847C22415D7DD009092F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB6847C52415D7DD009092F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB6847C72415D7DD009092F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB6847CD2415D821009092F4 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		AB6847CF2415DB72009092F4 /* DateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewController.swift; sourceTree = "<group>"; };
+		AB6847D12415DB89009092F4 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
+		AB81E1662415E6B200ABBEE9 /* Declarative.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Declarative.swift; sourceTree = "<group>"; };
+		AB81E16B2415E78C00ABBEE9 /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
+		AB81E16F24160F7100ABBEE9 /* DatePickerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerTextField.swift; sourceTree = "<group>"; };
+		AB81E172241621B700ABBEE9 /* InBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InBody.swift; sourceTree = "<group>"; };
+		AB81E175241625F700ABBEE9 /* Body.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Body.swift; sourceTree = "<group>"; };
+		AB81E1782416279E00ABBEE9 /* BodyDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyDataCell.swift; sourceTree = "<group>"; };
+		B8C4869FA3F2A1CF9DE95E6C /* Pods-MyHealthManagement.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyHealthManagement.release.xcconfig"; path = "Target Support Files/Pods-MyHealthManagement/Pods-MyHealthManagement.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +63,47 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C9C894CF01227800469B55B /* Pods_MyHealthManagement.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1282D0E7C0E670B502B8C37C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				253BCABACFDF670BF5B45FEF /* Pods_MyHealthManagement.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AB5DEC8F2416346100845681 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AB5DEC902416347B00845681 /* BodyViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AB5DEC922416392700845681 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				AB5DEC932416393400845681 /* Double + Extension.swift */,
+				AB5DEC97241640AD00845681 /* String + Extension.swift */,
+				AB5DEC9524163CF800845681 /* UIColor + Extension.swift */,
+				AB5DEC9D24173B7000845681 /* Date + Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		AB6847AF2415D7DA009092F4 = {
 			isa = PBXGroup;
 			children = (
 				AB6847BA2415D7DA009092F4 /* MyHealthManagement */,
 				AB6847B92415D7DA009092F4 /* Products */,
+				DDDF5A6335FB2A2119E8D9B0 /* Pods */,
+				1282D0E7C0E670B502B8C37C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +119,90 @@
 			isa = PBXGroup;
 			children = (
 				AB6847BB2415D7DA009092F4 /* AppDelegate.swift */,
-				AB6847BD2415D7DA009092F4 /* ViewController.swift */,
-				AB6847BF2415D7DA009092F4 /* Main.storyboard */,
+				AB5DEC922416392700845681 /* Extension */,
+				AB81E171241621AC00ABBEE9 /* Utilities */,
+				AB81E1692415E76A00ABBEE9 /* Coordinator */,
+				AB81E1652415E68A00ABBEE9 /* Declarative */,
+				AB81E174241625EB00ABBEE9 /* Model */,
+				AB81E175241625F700ABBEE9 /* Body.swift */,
+				AB5DEC8F2416346100845681 /* ViewModel */,
+				AB81E16A2415E77C00ABBEE9 /* View */,
+				AB81E1682415E75D00ABBEE9 /* Controller */,
 				AB6847C22415D7DD009092F4 /* Assets.xcassets */,
 				AB6847C42415D7DD009092F4 /* LaunchScreen.storyboard */,
 				AB6847C72415D7DD009092F4 /* Info.plist */,
 			);
 			path = MyHealthManagement;
+			sourceTree = "<group>";
+		};
+		AB81E1652415E68A00ABBEE9 /* Declarative */ = {
+			isa = PBXGroup;
+			children = (
+				AB81E1662415E6B200ABBEE9 /* Declarative.swift */,
+			);
+			path = Declarative;
+			sourceTree = "<group>";
+		};
+		AB81E1682415E75D00ABBEE9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AB6847CF2415DB72009092F4 /* DateViewController.swift */,
+				AB6847D12415DB89009092F4 /* ChartViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		AB81E1692415E76A00ABBEE9 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				AB6847CD2415D821009092F4 /* AppCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		AB81E16A2415E77C00ABBEE9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AB81E1772416277A00ABBEE9 /* DatePickerView */,
+				AB81E1782416279E00ABBEE9 /* BodyDataCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AB81E171241621AC00ABBEE9 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				AB81E172241621B700ABBEE9 /* InBody.swift */,
+				AB5DEC9B24172E5900845681 /* UnmanagedCopy.swift */,
+				AB5DEC8D24162E5E00845681 /* KeyboardHandle.swift */,
+				AB5DEC992417244C00845681 /* RLMManager.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		AB81E174241625EB00ABBEE9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AB81E1772416277A00ABBEE9 /* DatePickerView */ = {
+			isa = PBXGroup;
+			children = (
+				AB81E16B2415E78C00ABBEE9 /* DatePickerView.swift */,
+				AB81E16F24160F7100ABBEE9 /* DatePickerTextField.swift */,
+			);
+			path = DatePickerView;
+			sourceTree = "<group>";
+		};
+		DDDF5A6335FB2A2119E8D9B0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9F24AFA4D20BA34DEB82D69C /* Pods-MyHealthManagement.debug.xcconfig */,
+				B8C4869FA3F2A1CF9DE95E6C /* Pods-MyHealthManagement.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +212,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AB6847CA2415D7DD009092F4 /* Build configuration list for PBXNativeTarget "MyHealthManagement" */;
 			buildPhases = (
+				615DB42F1C5310423439EB91 /* [CP] Check Pods Manifest.lock */,
 				AB6847B42415D7DA009092F4 /* Sources */,
 				AB6847B52415D7DA009092F4 /* Frameworks */,
 				AB6847B62415D7DA009092F4 /* Resources */,
+				8C72EC85DC08AC0558C95147 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -124,33 +267,82 @@
 			files = (
 				AB6847C62415D7DD009092F4 /* LaunchScreen.storyboard in Resources */,
 				AB6847C32415D7DD009092F4 /* Assets.xcassets in Resources */,
-				AB6847C12415D7DA009092F4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		615DB42F1C5310423439EB91 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MyHealthManagement-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8C72EC85DC08AC0558C95147 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyHealthManagement/Pods-MyHealthManagement-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyHealthManagement/Pods-MyHealthManagement-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyHealthManagement/Pods-MyHealthManagement-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AB6847B42415D7DA009092F4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB6847BE2415D7DA009092F4 /* ViewController.swift in Sources */,
+				AB5DEC942416393400845681 /* Double + Extension.swift in Sources */,
+				AB5DEC9A2417244C00845681 /* RLMManager.swift in Sources */,
+				AB81E16C2415E78C00ABBEE9 /* DatePickerView.swift in Sources */,
+				AB5DEC98241640AD00845681 /* String + Extension.swift in Sources */,
+				AB81E173241621B700ABBEE9 /* InBody.swift in Sources */,
+				AB81E1672415E6B200ABBEE9 /* Declarative.swift in Sources */,
+				AB81E1792416279E00ABBEE9 /* BodyDataCell.swift in Sources */,
+				AB81E176241625F700ABBEE9 /* Body.swift in Sources */,
+				AB5DEC9C24172E5900845681 /* UnmanagedCopy.swift in Sources */,
 				AB6847BC2415D7DA009092F4 /* AppDelegate.swift in Sources */,
+				AB5DEC9624163CF800845681 /* UIColor + Extension.swift in Sources */,
+				AB5DEC9E24173B7000845681 /* Date + Extension.swift in Sources */,
+				AB6847D22415DB89009092F4 /* ChartViewController.swift in Sources */,
+				AB81E17024160F7100ABBEE9 /* DatePickerTextField.swift in Sources */,
+				AB5DEC912416347B00845681 /* BodyViewModel.swift in Sources */,
+				AB6847D02415DB72009092F4 /* DateViewController.swift in Sources */,
+				AB6847CE2415D821009092F4 /* AppCoordinator.swift in Sources */,
+				AB5DEC8E24162E5E00845681 /* KeyboardHandle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		AB6847BF2415D7DA009092F4 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AB6847C02415D7DA009092F4 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		AB6847C42415D7DD009092F4 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -213,7 +405,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -268,7 +460,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -280,6 +472,7 @@
 		};
 		AB6847CB2415D7DD009092F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F24AFA4D20BA34DEB82D69C /* Pods-MyHealthManagement.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +491,7 @@
 		};
 		AB6847CC2415D7DD009092F4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8C4869FA3F2A1CF9DE95E6C /* Pods-MyHealthManagement.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

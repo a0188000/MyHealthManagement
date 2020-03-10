@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ChartViewController.swift
 //  MyHealthManagement
 //
 //  Created by EVERTRUST on 2020/3/9.
@@ -8,13 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ChartViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view.
+        self.view.backgroundColor = .blue
     }
 
-
 }
-

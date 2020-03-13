@@ -17,6 +17,7 @@ class AppCoordinator {
     var window: UIWindow
     
     private var tabbarCtrl: UITabBarController?
+    private var viewModel = BodyViewModel()
     
     init(window: UIWindow) {
         keyboardHandler.isEnable = true
@@ -28,10 +29,14 @@ class AppCoordinator {
         self.tabbarCtrl = UITabBarController()
         self.tabbarCtrl?.viewControllers =
             [
-                UINavigationController(rootViewController: DateViewController(viewModel: BodyViewModel())),
-                ChartViewController()
+                UINavigationController(rootViewController: DateViewController(viewModel: self.viewModel)),
+                UINavigationController(rootViewController: ChartViewController(viewModel: self.viewModel))
             ]
+        self.configureTabbarItems()
         
+    }
+    
+    private func configureTabbarItems() {
         guard
             let dateItem = self.tabbarCtrl?.tabBar.items?.first,
             let chartItem = self.tabbarCtrl?.tabBar.items?.last

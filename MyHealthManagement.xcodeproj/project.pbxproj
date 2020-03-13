@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3C9C894CF01227800469B55B /* Pods_MyHealthManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 253BCABACFDF670BF5B45FEF /* Pods_MyHealthManagement.framework */; };
+		AB5306442419E1CF00693388 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5306432419E1CF00693388 /* UIView + Extension.swift */; };
+		AB530646241B608800693388 /* GeneralHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB530645241B608800693388 /* GeneralHelper.swift */; };
 		AB5DEC8E24162E5E00845681 /* KeyboardHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5DEC8D24162E5E00845681 /* KeyboardHandle.swift */; };
 		AB5DEC912416347B00845681 /* BodyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5DEC902416347B00845681 /* BodyViewModel.swift */; };
 		AB5DEC942416393400845681 /* Double + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5DEC932416393400845681 /* Double + Extension.swift */; };
@@ -16,6 +18,9 @@
 		AB5DEC9A2417244C00845681 /* RLMManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5DEC992417244C00845681 /* RLMManager.swift */; };
 		AB5DEC9C24172E5900845681 /* UnmanagedCopy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5DEC9B24172E5900845681 /* UnmanagedCopy.swift */; };
 		AB5DEC9E24173B7000845681 /* Date + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5DEC9D24173B7000845681 /* Date + Extension.swift */; };
+		AB5DECA6241763C300845681 /* HealthChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5DECA5241763C300845681 /* HealthChartView.swift */; };
+		AB5DECA82418BAF900845681 /* CheckboxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5DECA72418BAF900845681 /* CheckboxButton.swift */; };
+		AB5DECAA2418BB8A00845681 /* CheckButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5DECA92418BB8A00845681 /* CheckButtonView.swift */; };
 		AB6847BC2415D7DA009092F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6847BB2415D7DA009092F4 /* AppDelegate.swift */; };
 		AB6847C32415D7DD009092F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB6847C22415D7DD009092F4 /* Assets.xcassets */; };
 		AB6847C62415D7DD009092F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB6847C42415D7DD009092F4 /* LaunchScreen.storyboard */; };
@@ -33,6 +38,8 @@
 /* Begin PBXFileReference section */
 		253BCABACFDF670BF5B45FEF /* Pods_MyHealthManagement.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyHealthManagement.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F24AFA4D20BA34DEB82D69C /* Pods-MyHealthManagement.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyHealthManagement.debug.xcconfig"; path = "Target Support Files/Pods-MyHealthManagement/Pods-MyHealthManagement.debug.xcconfig"; sourceTree = "<group>"; };
+		AB5306432419E1CF00693388 /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
+		AB530645241B608800693388 /* GeneralHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralHelper.swift; sourceTree = "<group>"; };
 		AB5DEC8D24162E5E00845681 /* KeyboardHandle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHandle.swift; sourceTree = "<group>"; };
 		AB5DEC902416347B00845681 /* BodyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyViewModel.swift; sourceTree = "<group>"; };
 		AB5DEC932416393400845681 /* Double + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double + Extension.swift"; sourceTree = "<group>"; };
@@ -41,7 +48,10 @@
 		AB5DEC992417244C00845681 /* RLMManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RLMManager.swift; sourceTree = "<group>"; };
 		AB5DEC9B24172E5900845681 /* UnmanagedCopy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnmanagedCopy.swift; sourceTree = "<group>"; };
 		AB5DEC9D24173B7000845681 /* Date + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date + Extension.swift"; sourceTree = "<group>"; };
-		AB6847B82415D7DA009092F4 /* MyHealthManagement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyHealthManagement.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB5DECA5241763C300845681 /* HealthChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthChartView.swift; sourceTree = "<group>"; };
+		AB5DECA72418BAF900845681 /* CheckboxButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxButton.swift; sourceTree = "<group>"; };
+		AB5DECA92418BB8A00845681 /* CheckButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckButtonView.swift; sourceTree = "<group>"; };
+		AB6847B82415D7DA009092F4 /* InBody.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InBody.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB6847BB2415D7DA009092F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB6847C22415D7DD009092F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB6847C52415D7DD009092F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -93,8 +103,25 @@
 				AB5DEC97241640AD00845681 /* String + Extension.swift */,
 				AB5DEC9524163CF800845681 /* UIColor + Extension.swift */,
 				AB5DEC9D24173B7000845681 /* Date + Extension.swift */,
+				AB5306432419E1CF00693388 /* UIView + Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		AB5DECA3241763A900845681 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				AB81E1782416279E00ABBEE9 /* BodyDataCell.swift */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		AB5DECA4241763B200845681 /* Chart */ = {
+			isa = PBXGroup;
+			children = (
+				AB5DECA5241763C300845681 /* HealthChartView.swift */,
+			);
+			path = Chart;
 			sourceTree = "<group>";
 		};
 		AB6847AF2415D7DA009092F4 = {
@@ -110,7 +137,7 @@
 		AB6847B92415D7DA009092F4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AB6847B82415D7DA009092F4 /* MyHealthManagement.app */,
+				AB6847B82415D7DA009092F4 /* InBody.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -164,7 +191,10 @@
 			isa = PBXGroup;
 			children = (
 				AB81E1772416277A00ABBEE9 /* DatePickerView */,
-				AB81E1782416279E00ABBEE9 /* BodyDataCell.swift */,
+				AB5DECA3241763A900845681 /* TableViewCell */,
+				AB5DECA4241763B200845681 /* Chart */,
+				AB5DECA72418BAF900845681 /* CheckboxButton.swift */,
+				AB5DECA92418BB8A00845681 /* CheckButtonView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -176,6 +206,7 @@
 				AB5DEC9B24172E5900845681 /* UnmanagedCopy.swift */,
 				AB5DEC8D24162E5E00845681 /* KeyboardHandle.swift */,
 				AB5DEC992417244C00845681 /* RLMManager.swift */,
+				AB530645241B608800693388 /* GeneralHelper.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -224,7 +255,7 @@
 			);
 			name = MyHealthManagement;
 			productName = MyHealthManagement;
-			productReference = AB6847B82415D7DA009092F4 /* MyHealthManagement.app */;
+			productReference = AB6847B82415D7DA009092F4 /* InBody.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -323,20 +354,25 @@
 				AB5DEC9A2417244C00845681 /* RLMManager.swift in Sources */,
 				AB81E16C2415E78C00ABBEE9 /* DatePickerView.swift in Sources */,
 				AB5DEC98241640AD00845681 /* String + Extension.swift in Sources */,
+				AB5306442419E1CF00693388 /* UIView + Extension.swift in Sources */,
 				AB81E173241621B700ABBEE9 /* InBody.swift in Sources */,
 				AB81E1672415E6B200ABBEE9 /* Declarative.swift in Sources */,
 				AB81E1792416279E00ABBEE9 /* BodyDataCell.swift in Sources */,
 				AB81E176241625F700ABBEE9 /* Body.swift in Sources */,
 				AB5DEC9C24172E5900845681 /* UnmanagedCopy.swift in Sources */,
 				AB6847BC2415D7DA009092F4 /* AppDelegate.swift in Sources */,
+				AB5DECAA2418BB8A00845681 /* CheckButtonView.swift in Sources */,
+				AB5DECA82418BAF900845681 /* CheckboxButton.swift in Sources */,
 				AB5DEC9624163CF800845681 /* UIColor + Extension.swift in Sources */,
 				AB5DEC9E24173B7000845681 /* Date + Extension.swift in Sources */,
 				AB6847D22415DB89009092F4 /* ChartViewController.swift in Sources */,
+				AB530646241B608800693388 /* GeneralHelper.swift in Sources */,
 				AB81E17024160F7100ABBEE9 /* DatePickerTextField.swift in Sources */,
 				AB5DEC912416347B00845681 /* BodyViewModel.swift in Sources */,
 				AB6847D02415DB72009092F4 /* DateViewController.swift in Sources */,
 				AB6847CE2415D821009092F4 /* AppCoordinator.swift in Sources */,
 				AB5DEC8E24162E5E00845681 /* KeyboardHandle.swift in Sources */,
+				AB5DECA6241763C300845681 /* HealthChartView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,17 +511,21 @@
 			baseConfigurationReference = 9F24AFA4D20BA34DEB82D69C /* Pods-MyHealthManagement.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 2020031301;
 				DEVELOPMENT_TEAM = A5W78287P6;
 				INFOPLIST_FILE = MyHealthManagement/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.weiTing.MyHealthManagement;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.weiTing.InBody;
+				PRODUCT_NAME = InBody;
+				PROVISIONING_PROFILE_SPECIFIER = InBody_ProvisioningProfile;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -494,17 +534,21 @@
 			baseConfigurationReference = B8C4869FA3F2A1CF9DE95E6C /* Pods-MyHealthManagement.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 2020031301;
 				DEVELOPMENT_TEAM = A5W78287P6;
 				INFOPLIST_FILE = MyHealthManagement/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.weiTing.MyHealthManagement;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.weiTing.InBody;
+				PRODUCT_NAME = InBody;
+				PROVISIONING_PROFILE_SPECIFIER = InBody_AppStore;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

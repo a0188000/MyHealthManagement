@@ -8,4 +8,5 @@ target 'MyHealthManagement' do
   # Pods for MyHealthManagement
   pod 'SnapKit'
   pod 'RealmSwift'
+  pod 'Charts'
 end

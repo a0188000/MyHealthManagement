@@ -14,11 +14,11 @@ class DateViewController: UIViewController {
     private var datePickerView = DatePickerView()
     private var tableView: UITableView!
     private var saveButton: UIButton!
+    private var deleteButton: UIButton!
     
     convenience init(viewModel: BodyViewModel) {
         self.init()
         self.viewModel = viewModel
-        self.viewModel.date = Date(timeIntervalSince1970: Date.currentDayTimestamp())
     }
     
     override func viewDidLoad() {
@@ -29,11 +29,12 @@ class DateViewController: UIViewController {
         self.view.backgroundColor = .white
         self.configureUI()
         self.bind()
+        self.viewModel.date = Date(timeIntervalSince1970: Date.currentDayTimestamp())
     }
 
     private func configureUI() {
         self.setDatePickerView()
-        self.setSaveButton()
+        self.setButtonControlView()
         self.setTableView()
     }
     
@@ -69,18 +70,20 @@ class DateViewController: UIViewController {
         }
     }
     
-    private func setSaveButton() {
-        self.saveButton = UIButton(type: .system, {
-            $0.isEnabled = false
-            $0.setTitle("儲存", for: .normal)
-            $0.setTitleColor(.white, for: .normal)
-            $0.backgroundColor = .init(r: 0, g: 122, b: 255)
-            $0.layer.cornerRadius = 8
-            $0.addTarget(self, action: #selector(self.saveButtonPressed(_:)), for: .touchUpInside)
-        })
-        self.view.addSubview(saveButton)
+    private func setButtonControlView() {
+        self.setSaveButton()
+        self.setDeleteButton()
         
-        self.saveButton.snp.makeConstraints { (make) in
+        let stackView = UIStackView {
+            $0.axis = .vertical
+            $0.distribution = .fillEqually
+            $0.spacing = 8
+            $0.addArrangedSubview(self.saveButton)
+            $0.addArrangedSubview(self.deleteButton)
+        }
+        self.view.addSubview(stackView)
+        
+        stackView.snp.makeConstraints { (make) in
             if #available(iOS 11.0, *) {
                 make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).offset(-8)
             } else {
@@ -88,18 +91,64 @@ class DateViewController: UIViewController {
             }
             make.left.equalToSuperview().offset(16)
             make.right.equalToSuperview().offset(-16)
+        }
+        
+        self.saveButton.snp.makeConstraints { (make) in
             make.height.equalTo(44)
         }
+        
+        self.deleteButton.snp.makeConstraints { (make) in
+            make.height.equalTo(44)
+        }
+    }
+    
+    private func setSaveButton() {
+        self.saveButton = UIButton(type: .system, {
+            $0.clipsToBounds = true
+            $0.isEnabled = false
+            $0.setTitle("儲存", for: .normal)
+            $0.setTitleColor(.white, for: .normal)
+            $0.setBackgroundImage(GeneralHelper.shared.getImageWithColor(.init(r: 0, g: 122, b: 255), size: .init(width: 1, height: 1)), for: .normal)
+            $0.setBackgroundImage(GeneralHelper.shared.getImageWithColor(.gray, size: .init(width: 1, height: 1)), for: .disabled)
+            $0.layer.cornerRadius = 8
+            $0.addTarget(self, action: #selector(self.saveButtonPressed(_:)), for: .touchUpInside)
+        })
+        self.view.addSubview(saveButton)
+    }
+    
+    private func setDeleteButton() {
+        self.deleteButton = UIButton(type: .system, {
+            $0.clipsToBounds = true
+            $0.isHidden = true
+            $0.setTitle("刪除該日紀錄", for: .normal)
+            $0.setTitleColor(.white, for: .normal)
+            $0.setBackgroundImage(GeneralHelper.shared.getImageWithColor(.init(r: 0, g: 122, b: 255), size: .init(width: 1, height: 1)), for: .normal)
+            $0.setBackgroundImage(GeneralHelper.shared.getImageWithColor(.gray, size: .init(width: 1, height: 1)), for: .disabled)
+            $0.layer.cornerRadius = 8
+            $0.addTarget(self, action: #selector(self.deleteButtonPressed(_:)), for: .touchUpInside)
+        })
     }
     
     private func bind() {
         self.viewModel.saveBtnEnableObservable = { [weak self] enable in
             self?.saveButton.isEnabled = enable
         }
+        
+        self.viewModel.deleteBtnEnableObservable = { [weak self] enable in
+            self?.deleteButton.isHidden = !enable
+        }
+        
+        self.viewModel.removedBodyDataSuccessCallback = { [weak self] in
+            self?.tableView.reloadData()
+        }
     }
     
     @objc private func saveButtonPressed(_ sender: UIButton) {
         self.viewModel.save()
+    }
+    
+    @objc private func deleteButtonPressed(_ sender: UIButton) {
+        self.viewModel.delete()
     }
 }
 
@@ -121,7 +170,7 @@ extension DateViewController: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? BodyDataCell
         else { return UITableViewCell() }
         cell.delegate = self
-        cell.setData(body: self.viewModel.body, bodyData: boydData)
+        cell.setData(body: self.viewModel.body?.unmanagedCopy(), bodyData: boydData)
         return cell
     }
 }

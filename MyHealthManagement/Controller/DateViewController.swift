@@ -173,6 +173,7 @@ extension DateViewController: UITableViewDelegate, UITableViewDataSource {
         cell.setData(body: self.viewModel.body?.unmanagedCopy(), bodyData: boydData)
         return cell
     }
+
 }
 
 extension DateViewController: BodyDataCellDelegate {

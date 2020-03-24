@@ -14,6 +14,7 @@ class ChartViewController: UIViewController {
     private var viewModel: BodyViewModel!
     private var checkButtonView: CheckButtonView!
     private var chartView: HealthChartView!
+    private var chartBubbleMarkerView: ChartBubbleMarkerView?
     
     convenience init(viewModel: BodyViewModel) {
         self.init()
@@ -84,6 +85,17 @@ class ChartViewController: UIViewController {
         }
     }
     
+    private func configureBubbleView(inBody: InBody, entry: BodyChartDataEntry) {
+        self.chartBubbleMarkerView?.removeFromSuperview()
+        let v = ChartBubbleMarkerView(inBody: inBody, entry: entry)
+        self.view.addSubview(v)
+        self.chartBubbleMarkerView = v
+        v.snp.makeConstraints { (make) in
+            make.top.equalTo(self.chartView).offset(16)
+            make.centerX.equalToSuperview()
+        }
+    }
+    
     @objc private func screenShotBtnPressed(_ sender: UIButton) {
         if self.chartView.data == nil { return }
         let screenShot = self.chartView.asImage()
@@ -105,6 +117,12 @@ extension ChartViewController: ChartViewDelegate {
         guard let index = dataSet?.entries.firstIndex(where: { $0 == entry }) else { return }
         dataSet?.entries[index].icon = dataSet?.inBody.chart_icon_h
         
+        guard
+            let inBody = dataSet?.inBody,
+            let entry = dataSet?.entries[index] as? BodyChartDataEntry
+        else { return }
+        self.configureBubbleView(inBody: inBody, entry: entry)
+        
         print("InBody: \(dataSet?.inBody)")
         print("Value: \(dataSet?.entries[index].y)")
     }
@@ -115,6 +133,8 @@ extension ChartViewController: ChartViewDelegate {
             .forEach { dataSet in
                 dataSet.entries.forEach { $0.icon = dataSet.inBody.chart_icon }
         }
+        self.chartBubbleMarkerView?.removeFromSuperview()
+        self.chartBubbleMarkerView = nil
     }
 }
 

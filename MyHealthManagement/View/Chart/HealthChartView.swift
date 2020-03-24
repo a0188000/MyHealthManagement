@@ -34,9 +34,6 @@ class HealthChartView: LineChartView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-//        self.configure()
-//        self.configureXAxis()
-//        self.configureLeftAxis()
     }
     
     private func configure() {
@@ -51,7 +48,6 @@ class HealthChartView: LineChartView {
         self.rightAxis.enabled = false
         self.legend.form = .none
         self.chartDescription?.text = nil
-    
     }
     
     // MARK: - X軸設置
@@ -61,9 +57,7 @@ class HealthChartView: LineChartView {
         self.xAxis.drawGridLinesEnabled = true
         self.xAxis.axisLineColor = .clear//self.axixLineColor
         
-
         var xValue: [String] = []
-        let totalCount = 90
         var day = Int(self.formatter.string(from: Date(timeIntervalSince1970: self.bodys.first?.timestamp ?? 0)).asDouble())
         (1...90).forEach {
             switch day {
@@ -126,13 +120,16 @@ class HealthChartView: LineChartView {
         case .pbf:          bodyDataSet = self.pbfSet
         }
         
-        var dataSets = self.data!.dataSets.compactMap { $0 as? BodyLineChartDataSet }
+        let dataSets = self.data!.dataSets.compactMap { $0 as? BodyLineChartDataSet }
         if let dataSet = dataSets.first(where: { $0.inBody == inBody }) {
-            dataSets = dataSets.filter { $0 != dataSet}
+//            dataSets = dataSets.filter { $0 != dataSet }
+            self.data?.removeDataSet(dataSet)
         } else {
-            dataSets.append(bodyDataSet)
+//            dataSets.append(bodyDataSet)
+            self.data?.addDataSet(bodyDataSet)
         }
-        self.data = LineChartData(dataSets: dataSets)
+        self.notifyDataSetChanged()
+//        self.data = LineChartData(dataSets: dataSets)
     }
     
     func reloadData() {
@@ -141,106 +138,5 @@ class HealthChartView: LineChartView {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-}
-
-class BodyChartDataSource {
-    
-    public private(set) var bodys: [RLM_Body] = []
-    public private(set) var originalEntries: [ChartDataEntry] = []
-    public private(set) var filterEntries: [ChartDataEntry] = []
-    
-    init(bodys: [RLM_Body], inBody: InBody) {
-        self.bodys = bodys
-        self.configureEntries(inBody: inBody)
-    }
-    
-    private var formatter = DateFormatter {
-        $0.dateFormat = "dd"
-    }
-    
-    private func configureData() {
-        
-    }
-    
-    private func configureEntries(inBody: InBody) {
-        guard
-            var minDateTimestamp = self.bodys.first?.timestamp,
-            let maxDateTimestamp = self.bodys.last?.timestamp
-        else { return }
-        
-        let minValue = Int(self.formatter.string(from: Date(timeIntervalSince1970: minDateTimestamp))) ?? 0
-        let maxValue = minValue + 90
-        
-        for i in 0..<maxValue {
-            if minDateTimestamp > maxDateTimestamp { return }
-
-            if let body = self.bodys.first(where: { $0.timestamp == minDateTimestamp }) {
-                var y: Double = 0.0
-                switch inBody {
-                case .bodyWeigth:   y = body.bodyWeigth
-                case .muscleWeight: y = body.muscleWeight
-                case .bodyFat:      y = body.bodyFat
-                case .bmi:          y = body.bmi
-                case .pbf:          y = body.pbf
-                }
-                if y == 0.0 {
-                    minDateTimestamp += 86400
-                    continue
-                }
-                self.originalEntries.append(BodyChartDataEntry(x: Double(i), y: y, icon: inBody.chart_icon, inBody: inBody))
-            }
-            minDateTimestamp += 86400
-        }
-    }
-}
-
-class BodyChartDataEntry: ChartDataEntry {
-    
-    public private(set) var inBody: InBody
-    
-    init(x: Double, y: Double, icon: NSUIImage?, inBody: InBody) {
-        self.inBody = inBody
-        super.init(x: x, y: y)
-        self.icon = icon
-    }
-    
-    required init() {
-        fatalError("init() has not been implemented")
-    }
-}
-
-class BodyLineChartDataSet: LineChartDataSet {
-    
-    public private(set) var inBody: InBody
-    
-    init(entries: [ChartDataEntry], inBody: InBody) {
-        self.inBody = inBody
-        super.init(entries: entries, label: nil)
-        self.colors = [inBody.chart_color]
-        self.drawValuesEnabled = true
-        self.valueFont = .boldSystemFont(ofSize: 12)
-        self.drawHorizontalHighlightIndicatorEnabled = false
-        self.highlightColor = .white//UIColor(r: 171, g: 171, b: 181).withAlphaComponent(0.5)
-        self.highlightLineWidth = 2
-//        self.highlightLineDashLengths = [2, 2]
-        self.lineWidth = 2
-        self.circleHoleColor = .white
-        self.circleColors = [.clear]
-//        self.circleRadius = 0
-    }
-    
-    required init() {
-        fatalError("init() has not been implemented")
-    }
-}
-
-class BodyWeightLineChartDataSet: BodyLineChartDataSet {
-    override init(entries: [ChartDataEntry], inBody: InBody) {
-        super.init(entries: entries, inBody: inBody)
-    }
-    
-    required init() {
-        fatalError("init() has not been implemented")
     }
 }

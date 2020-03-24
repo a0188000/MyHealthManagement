@@ -10,6 +10,6 @@ import Foundation
 
 extension Double {
     func asString() -> String {
-        return String(self) == "0.0" ? "" : String(self)
+        return String(format: "%.1f", self) == "0.0" ? "" : String(format: "%.1f", self)
     }
 }

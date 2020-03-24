@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Charts
 
 class BodyViewModel {
     
@@ -41,15 +42,17 @@ class BodyViewModel {
     }
     
     func updateBodyValue(value: String, bodyData: InBody) {
+        let body = self.body?.unmanagedCopy()
         switch bodyData {
         case .bodyWeigth:
-            self.body?.bodyWeigth = value.asDouble()
+            body?.bodyWeigth = value.asDouble()
             self.saveBtnEnableObservable(!(value.isEmpty || value == "0" || value == "0.0"))
-        case .muscleWeight: self.body?.muscleWeight = value.asDouble()
-        case .bodyFat:      self.body?.bodyFat = value.asDouble()
-        case .bmi:          self.body?.bmi = value.asDouble()
-        case .pbf:          self.body?.pbf = value.asDouble()
+        case .muscleWeight: body?.muscleWeight = value.asDouble()
+        case .bodyFat:      body?.bodyFat = value.asDouble()
+        case .bmi:          body?.bmi = value.asDouble()
+        case .pbf:          body?.pbf = value.asDouble()
         }
+        self.body = body
     }
     
     func save() {
@@ -67,6 +70,12 @@ class BodyViewModel {
         self.saveBtnEnableObservable(false)
         self.deleteBtnEnableObservable(false)
         self.bodyDataDidChangedCallback()
+    }
+    
+    func showMarkerView() -> MarkerView {
+        let marker = MarkerView(frame: .init(x: 20, y: -20, width: 100, height: 20))
+        marker.backgroundColor = .red
+        return marker
     }
 }
 

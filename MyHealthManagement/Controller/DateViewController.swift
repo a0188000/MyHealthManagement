@@ -150,6 +150,12 @@ class DateViewController: UIViewController {
     @objc private func deleteButtonPressed(_ sender: UIButton) {
         self.viewModel.delete()
     }
+    
+    func reloadBodyValue(date: Date) {
+        self.datePickerView.updateDatePickerDate(date: date)
+        self.viewModel.date = date
+        self.tableView.reloadData()
+    }
 }
 
 extension DateViewController: DatePickerViewDelegate {

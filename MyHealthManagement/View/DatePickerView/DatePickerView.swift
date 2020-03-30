@@ -103,6 +103,10 @@ class DatePickerView: UIView {
         self.dateTextField.date = Date(timeIntervalSince1970: newDateTimestamp)
     }
     
+    func updateDatePickerDate(date: Date) {
+        self.dateTextField.date = date
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

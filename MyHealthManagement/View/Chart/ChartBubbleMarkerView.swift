@@ -8,7 +8,13 @@
 
 import UIKit
 
+protocol ChartBubbleMarkerViewDelegate: class {
+    func chartBubbleMarkerViewTapRecordButton(_ view: ChartBubbleMarkerView, entry: BodyChartDataEntry)
+}
+
 class ChartBubbleMarkerView: UIView {
+    
+    weak var delegate: ChartBubbleMarkerViewDelegate?
     
     private var dateFormatter = DateFormatter {
         $0.dateFormat = "yyyy-MM-dd"
@@ -28,15 +34,19 @@ class ChartBubbleMarkerView: UIView {
         $0.backgroundColor = .white
     }
     
-    private var confirmButton = UIButton {
+    private lazy var recordButton = UIButton {
         $0.setTitle("紀錄", for: .normal)
+        $0.addTarget(self, action: #selector(self.recordButtonPressed(_:)), for: .touchUpInside)
     }
     
     private var inBody: InBody!
+    private var entry: BodyChartDataEntry!
     
     convenience init(inBody: InBody, entry: BodyChartDataEntry) {
         self.init(frame: .zero)
+        self.entry = entry
         self.backgroundColor = inBody.chart_color
+        self.dateLabel.text = self.dateFormatter.string(from: .init(timeIntervalSince1970: entry.body.timestamp))
         self.valueLabel.text = "\(inBody.text): \(entry.y.asString())\(inBody.unit)"
     }
     
@@ -52,7 +62,7 @@ class ChartBubbleMarkerView: UIView {
         self.addSubview(dateLabel)
         self.addSubview(valueLabel)
         self.addSubview(spaceLineView)
-        self.addSubview(confirmButton)
+        self.addSubview(recordButton)
         self.setConstraints()
     }
     
@@ -71,14 +81,19 @@ class ChartBubbleMarkerView: UIView {
         
         self.spaceLineView.snp.makeConstraints { (make) in
             make.top.bottom.equalTo(self.valueLabel)
-            make.right.equalTo(self.confirmButton.snp.left).offset(-8)
+            make.right.equalTo(self.recordButton.snp.left).offset(-8)
             make.width.equalTo(1)
         }
         
-        self.confirmButton.snp.makeConstraints { (make) in
+        self.recordButton.snp.makeConstraints { (make) in
             make.right.equalToSuperview().offset(-8)
             make.bottom.equalToSuperview().offset(-2)
         }
+    }
+    
+    @objc private func recordButtonPressed(_ sender: UIButton) {
+        if self.entry == nil { return }
+        self.delegate?.chartBubbleMarkerViewTapRecordButton(self, entry: self.entry)
     }
     
     required init?(coder: NSCoder) {

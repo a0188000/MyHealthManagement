@@ -11,6 +11,8 @@ import Charts
 
 class ChartViewController: UIViewController {
     
+    var showBodyRecord = { (_ body: Body) -> Void in }
+    
     private var viewModel: BodyViewModel!
     private var checkButtonView: CheckButtonView!
     private var chartView: HealthChartView!
@@ -88,6 +90,7 @@ class ChartViewController: UIViewController {
     private func configureBubbleView(inBody: InBody, entry: BodyChartDataEntry) {
         self.chartBubbleMarkerView?.removeFromSuperview()
         let v = ChartBubbleMarkerView(inBody: inBody, entry: entry)
+        v.delegate = self
         self.view.addSubview(v)
         self.chartBubbleMarkerView = v
         v.snp.makeConstraints { (make) in
@@ -142,5 +145,11 @@ extension ChartViewController: CheckButtonViewDelegate {
     func checkboxButtonPressed(at button: CheckboxButton) {
         self.chartView.showHideBodyDataEntries(inBody: button.inBody)
         button.isSelected = !button.isSelected
+    }
+}
+
+extension ChartViewController: ChartBubbleMarkerViewDelegate {
+    func chartBubbleMarkerViewTapRecordButton(_ view: ChartBubbleMarkerView, entry: BodyChartDataEntry) {
+        self.showBodyRecord(entry.body)
     }
 }

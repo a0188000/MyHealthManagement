@@ -67,13 +67,13 @@ class HealthChartView: LineChartView {
             xValue.append(String(day))
         }
         
-        self.xAxis.setLabelCount(10, force: false)
+        self.xAxis.setLabelCount(xValue.count, force: false)
         self.xAxis.valueFormatter = IndexAxisValueFormatter(values: xValue)
         self.xAxis.granularity = 1
         self.xAxis.spaceMin = 0.5
         self.xAxis.spaceMax = 2
         self.xAxis.axisMinimum = 0
-        self.xAxis.axisMaximum = 15
+        self.xAxis.axisMaximum = 30
 //        self.xAxis.granularityEnabled = true
     }
     
@@ -81,8 +81,8 @@ class HealthChartView: LineChartView {
     private func configureLeftAxis() {
         self.leftAxis.drawLimitLinesBehindDataEnabled = false
         self.leftAxis.axisMinimum = 10
-        self.leftAxis.axisMaximum = 80
-        self.leftAxis.setLabelCount(8, force: true)
+        self.leftAxis.axisMaximum = 120
+        self.leftAxis.setLabelCount(10, force: true)
 //        self.leftAxis.addLimitLine(ChartLimitLine {
 //            $0.limit = 65
 //            $0.label = "理想體重"
